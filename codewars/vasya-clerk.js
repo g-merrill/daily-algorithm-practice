@@ -23,10 +23,10 @@ const tickets = peopleInLine => {
             billsOnHand.push(50);
             billsOnHand.shift(25);
         } else {
-            if (billsOnHand.length >= 2 && billsOnHand[billsOnHand.length - 1] === 50 && billsOnHand[0] === 25) {
+            if (billsOnHand[billsOnHand.length - 1] === 50 && billsOnHand[0] === 25) {
                 billsOnHand.pop(50);
                 billsOnHand.shift(25);
-            } else if (billsOnHand.length >= 3 && (billsOnHand[0] && billsOnHand[1] && billsOnHand[2]) === 25) {
+            } else if ((billsOnHand[0] && billsOnHand[1] && billsOnHand[2]) === 25) {
                 billsOnHand.shift(25);
                 billsOnHand.shift(25);
                 billsOnHand.shift(25);
