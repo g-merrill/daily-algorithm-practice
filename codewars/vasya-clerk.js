@@ -21,15 +21,15 @@ const tickets = peopleInLine => {
             billsOnHand.unshift(25);
         } else if (peopleInLine[i] === 50 && billsOnHand[0] === 25) {
             billsOnHand.push(50);
-            billsOnHand.shift(25);
+            billsOnHand.shift();
         } else {
             if (billsOnHand[billsOnHand.length - 1] === 50 && billsOnHand[0] === 25) {
-                billsOnHand.pop(50);
-                billsOnHand.shift(25);
+                billsOnHand.pop();
+                billsOnHand.shift();
             } else if ((billsOnHand[0] && billsOnHand[1] && billsOnHand[2]) === 25) {
-                billsOnHand.shift(25);
-                billsOnHand.shift(25);
-                billsOnHand.shift(25);
+                billsOnHand.shift();
+                billsOnHand.shift();
+                billsOnHand.shift();
             } else {
                 return 'NO';
             }
