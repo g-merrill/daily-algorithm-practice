@@ -14,3 +14,26 @@
 
 // construct a loop through that will return 'YES' by default if it reaches the end, unless it fails certain conditions along the way,
 // this will cut down on time constraints, e.g. as soon as a condition fails, there is no need to examine the rest of the input array!
+const tickets = peopleInLine => {
+    let billsOnHand = [];
+    for (let i = 0; i < peopleInLine.length; i++) {
+        if (peopleInLine[i] === 25) {
+            billsOnHand.unshift(25);
+        } else if (peopleInLine[i] === 50 && billsOnHand[0] === 25) {
+            billsOnHand.push(50);
+            billsOnHand.shift(25);
+        } else {
+            if (billsOnHand.length >= 2 && billsOnHand[billsOnHand.length - 1] === 50 && billsOnHand[0] === 25) {
+                billsOnHand.pop(50);
+                billsOnHand.shift(25);
+            } else if (billsOnHand.length >= 3 && (billsOnHand[0] && billsOnHand[1] && billsOnHand[2]) === 25) {
+                billsOnHand.shift(25);
+                billsOnHand.shift(25);
+                billsOnHand.shift(25);
+            } else {
+                return 'NO';
+            }
+        }
+    }
+    return 'YES';
+}
