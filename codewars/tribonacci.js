@@ -1,5 +1,3 @@
-// test case
-// tribonacci([1, 1, 1], 10), [1, 1, 1, 3, 5, 9, 17, 31, 57, 105]
 
 // 2 inputs: 
 // array of three starting numbers, 
@@ -25,3 +23,6 @@ const tribonacci = (signature, n) => {
   }
   return trib;
 }
+
+// test case
+console.log(tribonacci([1, 1, 1], 10)) // [1, 1, 1, 3, 5, 9, 17, 31, 57, 105]
