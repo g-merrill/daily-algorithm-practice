@@ -1,24 +1,20 @@
 function maxProfit(prices) {
   
+  let maxProfitValue = 0;
   let minPrice = prices[0];
-  let maxPrice, priceEnd;
   
-  prices.forEach((price, idx) => {
-
-    if (idx !== 0) {
-      console.log(idx);
-      // grab price at end
-      priceEnd = prices[prices.length - idx];
-  
-      // if (prices[i])
+  prices.forEach( price => {
+    if (price < minPrice) {
+      minPrice = price;
+    } else {
+      maxProfitValue = Math.max(maxProfitValue, price - minPrice);
     }
-
   });
 
+  return maxProfitValue;
 
-
-  return;
 }
 
-console.log(maxProfit([7,1,5,3,6,4]))
-console.log(maxProfit([7,6,4,3,1]))
+console.log(maxProfit([7,1,5,3,6,4]));
+console.log(maxProfit([7,6,4,3,1]));
+console.log(maxProfit([]));
