@@ -4,7 +4,10 @@
 let i, node, nodeValue;
 
 const mergeTwoLists = function(l1, l2) {
+  if (l1 == null) return l2;
+  if (l2 == null) return l1;
   let nodeArray = [];
+  let node;
   let l1HasVals = true;
   let l2HasVals = true;
   while (l1HasVals || l2HasVals) {
