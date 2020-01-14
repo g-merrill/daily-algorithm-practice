@@ -1,8 +1,8 @@
 // Given a string s, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
+// worst case, every character is unique, just add the characters to the font
+// one inefficient way would be to add the letters from the back to the front as growing letter blocks, until it is a palindrome
+// will need a palindrome checker helper function
 const shortestPalindrome = s => {
-  // worst case, every character is unique, just add the characters to the font
-  // one inefficient way would be to add the letters from the back to the front as growing letter blocks, until it is a palindrome
-  // will need a palindrome checker helper function
   const checkForPalindrome = string => {
     let status = true;
     for (let i = 0; i < Math.floor(string.length / 2); i++) {
@@ -13,7 +13,7 @@ const shortestPalindrome = s => {
     }
     return status;
   }
-  // run s through palindrome checker
+  // run s through palindrome checker helper function
   let isPalindrome = checkForPalindrome(s);
   // grab last char as initial tempcharstring
   let tempCharStringCounter = 0;
